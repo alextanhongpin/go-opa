@@ -116,3 +116,35 @@ The output would be:
 ```
 
 If we change the name to `john` instead, the output would be false.
+
+
+## Multiple fields
+
+`query`:
+```
+some i;
+user := input.users[i] == "doe"
+# Try commenting out this line below to see the difference.
+# The last statement acts as a filter.
+user == true
+```
+
+`input`:
+```json
+{
+  "users": ["john", "jane", "doe"]
+}
+```
+
+`output`:
+
+```json
+{
+  "result": [
+    {
+      "i": 2,
+      "user": true
+    }
+  ]
+}
+```
